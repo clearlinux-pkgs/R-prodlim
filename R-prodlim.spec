@@ -4,18 +4,18 @@
 #
 Name     : R-prodlim
 Version  : 2018.04.18
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/prodlim_2018.04.18.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/prodlim_2018.04.18.tar.gz
 Summary  : Product-Limit Estimation for Censored Event History Analysis
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-prodlim-lib
+Requires: R-prodlim-lib = %{version}-%{release}
 Requires: R-Rcpp
 Requires: R-lava
 BuildRequires : R-Rcpp
 BuildRequires : R-lava
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 for censored event history (survival) analysis. Kaplan-Meier and
@@ -37,11 +37,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1524234691
+export SOURCE_DATE_EPOCH=1552861997
 
 %install
+export SOURCE_DATE_EPOCH=1552861997
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1524234691
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -76,8 +76,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library prodlim|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  prodlim || :
 
 
 %files
@@ -101,7 +100,9 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/prodlim/help/prodlim.rdx
 /usr/lib64/R/library/prodlim/html/00Index.html
 /usr/lib64/R/library/prodlim/html/R.css
-/usr/lib64/R/library/prodlim/libs/symbols.rds
+/usr/lib64/R/library/prodlim/tests/testthat/cluster.R
+/usr/lib64/R/library/prodlim/tests/testthat/pseudo.R
+/usr/lib64/R/library/prodlim/tests/testthat/test-prodlim.R
 
 %files lib
 %defattr(-,root,root,-)
