@@ -4,7 +4,7 @@
 #
 Name     : R-prodlim
 Version  : 2018.04.18
-Release  : 22
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/prodlim_2018.04.18.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/prodlim_2018.04.18.tar.gz
 Summary  : Product-Limit Estimation for Censored Event History Analysis
@@ -16,6 +16,7 @@ Requires: R-lava
 BuildRequires : R-Rcpp
 BuildRequires : R-lava
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 for censored event history (survival) analysis. Kaplan-Meier and
@@ -37,10 +38,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569367259
+export SOURCE_DATE_EPOCH=1571878378
 
 %install
-export SOURCE_DATE_EPOCH=1569367259
+export SOURCE_DATE_EPOCH=1571878378
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
