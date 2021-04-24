@@ -4,7 +4,7 @@
 #
 Name     : R-prodlim
 Version  : 2019.11.13
-Release  : 32
+Release  : 33
 URL      : https://cran.r-project.org/src/contrib/prodlim_2019.11.13.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/prodlim_2019.11.13.tar.gz
 Summary  : Product-Limit Estimation for Censored Event History Analysis
